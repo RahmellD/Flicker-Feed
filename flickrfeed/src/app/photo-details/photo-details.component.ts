@@ -30,9 +30,8 @@ export class PhotoDetailsComponent implements OnInit {
 
   openHighResPhoto(photo: any) {
     this.flickrservice.getPhotoById(photo.id).subscribe(data => {
-      const highResUrl = this.flickrservice.getHighResPhotoUrl(data.photo);
+      const highResUrl = this.flickrservice.getHighResPhotoUrl(data.photo.photoa);
       this.photo = highResUrl;
     });
   }
-
 }
