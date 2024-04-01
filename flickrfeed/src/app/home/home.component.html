@@ -1,19 +1,18 @@
-<div class="image1">
-    <div class="container">
-        <div class="title">
-            <p>Flickr Feed</p>
-        </div>
-        <div class="text">
-            <p>Find your inspiration.</p>
-        </div>
-        <div class="form-outline" data-mdb-input-init>
-            <input type="search" id="form1" class="form-control" [(ngModel)]="searchText"
-                (input)="onSearchInput($event)" placeholder="Search Your Dreams" aria-label="Search" />
-        </div>
+<div class="container">
+    <div class="title">
+        <p>Flickr Feed</p>
+    </div>
+    <div class="text">
+        <p>Find your inspiration.</p>
+    </div>
+    <div class="form-outline" data-mdb-input-init>
+        <input type="search" id="form1" class="form-control" [(ngModel)]="searchText" (input)="onSearchInput($event)"
+            placeholder="Search Your Dreams" aria-label="Search" />
     </div>
 </div>
-<div class="container">
-    <h1 class="text-center">{{ searchText }}</h1>
+
+
+<div class="d-flex">
     <div class="photos" *ngIf="photos && searchText" infinite-scroll [infiniteScrollDistance]="scrollDistance"
         [infiniteScrollThrottle]="throttle" (scrolled)="onScrollDown()">
         <div *ngFor="let photo of photos" class="photo-container" (click)="openPhotoDetail(photo)">
